@@ -3,6 +3,8 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import {useState} from "react";
 import {BsCircleFill} from "react-icons/bs";
+import Like from "./components/Like";
+
 
 function App() {
     let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -26,6 +28,8 @@ function App() {
         </Alert>
         }
         <Button text="Click me" color="primary" onClick={() => setAlertVisibility(true)}/>
+
+        <Like onClick={handleClick}/>
 
     </div>
 }
