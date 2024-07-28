@@ -2,6 +2,7 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import {useState} from "react";
+import {BsCircleFill} from "react-icons/bs";
 
 function App() {
     let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -15,6 +16,9 @@ function App() {
         console.log("clicked");
     }
     return <div>
+        <div>
+            <BsCircleFill color="red" size="50px"/>
+        </div>
         <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
         {
             alertVisible && <Alert onClose={() => setAlertVisibility(false)}>
