@@ -42,6 +42,20 @@ function App() {
         })
     }
 
+    const [tags, setTags] = useState(['cheering', 'excited']);
+
+    const handleTagClicked = () => {
+
+        // add
+        setTags([...tags, 'happy']);
+
+        // remove
+        setTags(tags.filter(tag => tag !== 'excited'));
+
+        // update
+
+        setTags(tags.map(tag => tag === 'excited' ? 'happy' : tag));
+    }
     return <div>
         <div>
             <BsCircleFill color="red" size="50px"/>
@@ -57,6 +71,7 @@ function App() {
         <Like onClick={handleClick}/>
 
         <Message/>
+
 
     </div>
 }
