@@ -4,6 +4,7 @@ import Button from "./components/Button";
 import {useState} from "react";
 import {BsCircleFill} from "react-icons/bs";
 import Like from "./components/Like";
+import Message from "./components/Message";
 
 
 function App() {
@@ -54,6 +55,8 @@ function App() {
         <Button text="Click me" color="primary" onClick={() => setAlertVisibility(true)}/>
 
         <Like onClick={handleClick}/>
+
+        <Message/>
 
     </div>
 }
