@@ -14,9 +14,33 @@ function App() {
         console.log(item);
     }
 
+    // state updating exercise
+
+    const [cart, setCart] = useState({
+        items: [
+            {
+                id: 1,
+                title: 'Product 1',
+                quantity: 1
+            },
+            {
+                id: 2,
+                title: 'Product 2',
+                quantity: 1
+            }
+        ],
+        discount: 1
+    })
+
     const handleClick = () => {
-        console.log("clicked");
+        // console.log("clicked");
+
+        setCart({
+            ...cart,
+            items: cart.items.map(item => item.id == 1 ? {...item, quantity: item.quantity + 1} : item)
+        })
     }
+
     return <div>
         <div>
             <BsCircleFill color="red" size="50px"/>
