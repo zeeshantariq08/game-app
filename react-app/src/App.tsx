@@ -6,6 +6,8 @@ import {BsCircleFill} from "react-icons/bs";
 import Like from "./components/Like";
 import Message from "./components/Message";
 
+import produce from "immer";
+
 
 function App() {
     let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
@@ -56,6 +58,37 @@ function App() {
 
         setTags(tags.map(tag => tag === 'excited' ? 'happy' : tag));
     }
+
+
+    const [bugs, setBugs] = useState([
+        {
+            id: 1,
+            title: 'Bug 1',
+            fixed: false
+        },
+        {
+            id: 2,
+            title: 'Bug 2',
+            fixed: false
+        },
+    ])
+
+    const handleBugFixed = () => {
+        // setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true} : bug));
+
+        setBugs(produce(bugs, draft => {
+            const bug = draft.find(bug => bug.id === 1);
+            if (bug) {
+                bug.fixed = true;
+            }
+        }))
+    }
+
+
+
+
+
+
     return <div>
         <div>
             <BsCircleFill color="red" size="50px"/>
