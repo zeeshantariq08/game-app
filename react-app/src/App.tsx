@@ -90,6 +90,15 @@ function App() {
 
 
     return <div>
+        {bugs.map(bug => {
+            return <div key={bug.id}>
+                <h1>{bug.title}</h1>
+                <h2>{bug.fixed ? 'fixed' : 'not fixed'}</h2>
+            </div>
+        })}
+
+        <Button text='hello' onClick={handleBugFixed} color="danger"/>
+
         <div>
             <BsCircleFill color="red" size="50px"/>
         </div>
