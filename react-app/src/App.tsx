@@ -85,6 +85,26 @@ function App() {
     }
 
 
+    const [customer, setCustomer] = useState({
+        id: 1,
+        name: 'John',
+        address: {
+            city: 'New York',
+            country: 'USA',
+            zipCode: 75485,
+
+        }
+    })
+
+    const handleCustomerClick = () => {
+
+        setCustomer({
+            ...customer,
+            address: {
+                ...customer.address, zipCode: 12345
+            }
+        })
+    }
 
 
 
