@@ -7,6 +7,8 @@ import Like from "./components/Like";
 import Message from "./components/Message";
 
 import produce from "immer";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 
 function App() {
@@ -106,33 +108,45 @@ function App() {
         })
     }
 
+    // sharing state concept between components
+
+    const [cartItems, setCartItems] = useState([
+        'Product1',
+        'Product2',
+        'Product3'
+    ])
+
+
 
 
 
     return <div>
-        {bugs.map(bug => {
-            return <div key={bug.id}>
-                <h1>{bug.title}</h1>
-                <h2>{bug.fixed ? 'fixed' : 'not fixed'}</h2>
-            </div>
-        })}
+        {/*{bugs.map(bug => {*/}
+        {/*    return <div key={bug.id}>*/}
+        {/*        <h1>{bug.title}</h1>*/}
+        {/*        <h2>{bug.fixed ? 'fixed' : 'not fixed'}</h2>*/}
+        {/*    </div>*/}
+        {/*})}*/}
 
-        <Button text='hello' onClick={handleBugFixed} color="danger"/>
+        {/*<Button text='hello' onClick={handleBugFixed} color="danger"/>*/}
 
-        <div>
-            <BsCircleFill color="red" size="50px"/>
-        </div>
-        <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>
-        {
-            alertVisible && <Alert onClose={() => setAlertVisibility(false)}>
-            <h1>Hello</h1>
-        </Alert>
-        }
-        <Button text="Click me" color="primary" onClick={() => setAlertVisibility(true)}/>
+        {/*<div>*/}
+        {/*    <BsCircleFill color="red" size="50px"/>*/}
+        {/*</div>*/}
+        {/*<ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}/>*/}
+        {/*{*/}
+        {/*    alertVisible && <Alert onClose={() => setAlertVisibility(false)}>*/}
+        {/*    <h1>Hello</h1>*/}
+        {/*</Alert>*/}
+        {/*}*/}
+        {/*<Button text="Click me" color="primary" onClick={() => setAlertVisibility(true)}/>*/}
 
-        <Like onClick={handleClick}/>
+        {/*<Like onClick={handleClick}/>*/}
 
-        <Message/>
+        {/*<Message/>*/}
+
+        <NavBar cartItemsCount={cartItems.length}/>
+        <Cart cartItems={cartItems} onClear={() => setCartItems([])}/>
 
 
     </div>
