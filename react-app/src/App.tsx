@@ -9,6 +9,7 @@ import Message from "./components/Message";
 import produce from "immer";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
+import ExpandableText from "./components/ExpandableText";
 
 
 function App() {
@@ -145,8 +146,27 @@ function App() {
 
         {/*<Message/>*/}
 
-        <NavBar cartItemsCount={cartItems.length}/>
-        <Cart cartItems={cartItems} onClear={() => setCartItems([])}/>
+        {/*<NavBar cartItemsCount={cartItems.length}/>*/}
+        {/*<Cart cartItems={cartItems} onClear={() => setCartItems([])}/>*/}
+
+        <ExpandableText maxChars={50}>
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque autem cumque distinctio dolorum eum ipsa
+            labore, laudantium modi molestias mollitia nisi quae quia quisquam suscipit totam ullam vitae, voluptatibus.
+            Aliquam assumenda nemo odio repellendus voluptas? Adipisci alias architecto asperiores aspernatur beatae
+            dolor eius ex, ipsum obcaecati, odio praesentium quisquam soluta, voluptatem voluptates voluptatum. Ducimus
+            fugiat laudantium nemo quas, quasi ratione sint vel vitae voluptatem? Aperiam asperiores, atque, autem
+            consequuntur dolore eius eos explicabo fugiat fugit ipsa nisi nostrum obcaecati rem sunt voluptatem.
+            Adipisci dicta facilis iusto maxime nisi odit quaerat qui quia quo voluptatem. Adipisci aliquid aperiam at
+            aut blanditiis cum cumque delectus, distinctio dolores in laborum maxime necessitatibus odit omnis placeat
+            provident quaerat quia rem repellendus rerum sapiente vel voluptatibus. Ab accusantium alias consequatur
+            consequuntur cumque dolorem doloribus earum eligendi esse ex exercitationem facere facilis incidunt itaque
+            laudantium natus, nihil nobis odit officia qui quisquam ratione recusandae rem rerum saepe temporibus ullam
+            unde ut, velit vero voluptate voluptatem, voluptates voluptatum. Asperiores dolor dolorem eveniet illo
+            inventore, ipsa iure minima odio ratione ullam, veniam vitae! Accusantium dignissimos, distinctio doloribus
+            eligendi error esse est et fuga in ipsam labore maiores nostrum odio officia omnis quibusdam ratione
+            repudiandae tempora tenetur vitae. Itaque.
+        </ExpandableText>
 
 
     </div>
